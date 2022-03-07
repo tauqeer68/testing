@@ -1,0 +1,22 @@
+<%= form_with(model: mattress, url: mattress) do |form| %>
+  <% if mattress.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(mattress.errors.count, "error") %> prohibited this mattress from being saved:</h2>
+
+      <ul>
+        <% mattress.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :shop_id, style: "display: block" %>
+    <%= form.collection_select :shop_id, shops, :shop_id, :shop %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Mattresses</h1>
+
+<div id="mattresses">
+  <% @mattresses.each do |mattress| %>
+    <%= render mattress %>
+    <p>
+      <%= link_to "Show this mattress", mattress %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New mattress", new_mattress_path %>
